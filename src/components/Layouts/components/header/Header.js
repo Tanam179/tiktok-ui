@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
@@ -19,18 +19,18 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faA}></FontAwesomeIcon>,
-        title: 'English'
+        title: 'English',
     },
     {
         icon: <FontAwesomeIcon icon={faQuestionCircle}></FontAwesomeIcon>,
         title: 'Feedback and help',
-        to: '/feedback'
+        to: '/feedback',
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
         title: 'Keyboard shortcuts',
-    }
-]
+    },
+];
 
 const Header = () => {
     return (
@@ -103,7 +103,6 @@ const Header = () => {
                 </svg>
                 <Tippy
                     interactive
-                    // visible={searchResults.length > 0}
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
@@ -128,18 +127,13 @@ const Header = () => {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    <Button gray text medium to="/upload">
-                        Upload
-                    </Button>
-                    <Button primary medium to="/login">
-                        Log in
-                    </Button>
+                    <Button to="/upload" medium text>Upload</Button>
+                    <Button to="/login" primary roundedLg medium>Login</Button>
                     <Menu items={MENU_ITEMS}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
                         </button>
                     </Menu>
-                    
                 </div>
             </div>
         </header>

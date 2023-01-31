@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 const AccountItem = () => {
     return (
         <div className={cx('wrapper')}>
-            <img className={cx('avatar')} src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/736d21414c84b6f8021d7cc179a0d77d~c5_100x100.jpeg?x-expires=1675011600&x-signature=UBe%2FcPRc9mHZ4Adf%2FA9dcdWRg3I%3D" alt="" />
+            <img className={cx('avatar')} src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/736d21414c84b6f8021d7cc179a0d77d~c5_100x100.jpeg?x-expires=1675263600&x-signature=h1s%2B33ghHiMt3cYPN7Z1Jl7OJ60%3D" alt="" />
             <div className={cx('info')}>
                 <h4 className={cx('user-name')}>
                     <span>Faze - naMsaT</span>

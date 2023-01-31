@@ -33,6 +33,10 @@ button, input, [tabindex] {
 }
 
 a {
-    color: var(--text-color);
+    color: var(--text-black);
     text-decoration: none;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
 }

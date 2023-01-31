@@ -5,38 +5,31 @@ import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Button = ({ className, to, href, rounded, disabled, text, primary, outline, small, medium, large, gray, full, auto, onClick, children, ...attributes }) => {
-    let Component = "button";
+function Button({ className, start, full, disabled, to, href, leftIcon, rightIcon, text, children, primary, outline, roundedLg, roundedFull, medium, small, onClick, ...attributes }) {
+    let Component = 'button';
 
-    const props = {
-        onClick,
-    };
-
-    if(disabled) {
-        Object.keys(props).forEach(key => {
-            if(key.startsWith('on') && typeof props[key] === 'function') {
-                delete props[key];
-            }
-        })
+    const _props = {
+        onClick
     }
 
-    if (to) {
-        props.to = to;
+    const classes = cx('wrapper', {text, primary, outline, roundedLg, roundedFull , medium, small, full, start}, className);
+
+    if(to) {
+        _props.to = to;
         Component = Link;
-    } else if (href) {
-        props.href = href;
+    } else if(href) {
+        _props.href = href;
         Component = 'a';
     }
-
-    const classes = cx('wrapper', {
-        disabled, text, primary, outline, small, medium, large, full, auto, rounded, gray, [className]: className
-    })
+    
 
     return (
-        <Component {...props} {...attributes} className={classes} >
-            <span>{children}</span>
-        </Component>
+            <Component className={classes} {..._props} {...attributes}>
+                {leftIcon && <p className={cx('icon')}>{leftIcon}</p>}
+                <p className={cx("button-title")}>{children}</p>
+                {rightIcon && <p className={cx('icon')}>{rightIcon}</p>}
+            </Component>
     );
-};
+}
 
 export default Button;
